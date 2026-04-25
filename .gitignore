@@ -1,2 +1,4 @@
 node_modules
 data/nuforc_raw.json
+dist
+ufo-sightings-dashboard

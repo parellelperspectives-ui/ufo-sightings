@@ -1,6 +1,6 @@
 {
-  "name": "ufo-dashboard",
-  "version": "1.0.0",
+  "name": "ufo-sightings-dashboard",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "webpack serve --mode development"
   },
   "keywords": [],
-  "author": "Marc Jaurena",
+  "author": "Parallel Perspectives",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.27.1",

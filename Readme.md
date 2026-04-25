@@ -4,7 +4,7 @@ An interactive data visualization dashboard to explore UFO sightings across time
 
 ## 🌐 Live Demo
 
-👉 https://parallel-perspectives.com/infographics/ufo-sightings
+👉 https://parallel-perspectives.com/infographics/ufo-sightings-dashboard
 
 ---
 
