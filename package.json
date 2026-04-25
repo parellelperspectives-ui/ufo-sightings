@@ -1,0 +1,48 @@
+{
+  "name": "ufo-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "keywords": [],
+  "author": "Marc Jaurena",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@tailwindcss/postcss": "^4.2.2",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "csv-loader": "^3.0.5",
+    "d3": "^7.9.0",
+    "html-webpack-plugin": "^5.6.3",
+    "postcss": "^8.5.8",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.86.3",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.2.2",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.5",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3",
+    "maplibre-gl": "^5.21.1",
+    "open": "^10.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-map-gl": "^8.1.0",
+    "recharts": "^3.8.1",
+    "topojson-client": "^3.1.0"
+  }
+}

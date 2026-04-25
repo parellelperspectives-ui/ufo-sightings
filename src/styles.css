@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* Make dark: work from a .dark class on a parent */
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+select {
+  margin: 5px;
+  padding: 4px;
+}
+.custom-icon div {
+  text-align: center;
+}
+.container{
+  padding: 0px;
+  width: 100%;
+  max-width: 100%;
+}
+
+a{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity:.8;
+}
+
+a:hover{
+  opacity:.6;
+
+}
+
+.map-options{
+  margin-left: auto;
+
+    @media (width <= 768px) {
+        margin-left: inherit;
+    }
+}
+
+
+.container {
+
+    @media (width >= 64rem) {
+        max-width: none;
+    }
+}
+
+.tooltipMap .leaflet-popup-content-wrapper{
+  padding: 12px;
+}
+
+.tooltipMap{
+  
+  background-color: white!important;
+  font-size: 12px;
+  width: 300px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+ opacity: 1!important;
+  color: black;
+  /* padding: 8px; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block!important;
+}
+
+.tooltipMap td{
+  padding: 4px;
+  border: 1px solid #ccc;
+}
+
+.tooltipMap th{
+  border: 1px solid #ccc;
+}
+
+.tooltipMap td.category{
+  font-weight: bold;
+  /* background-color: lightblue; */
+}
+
+/* removing button from pop-up tooltip */
+
+.leaflet-popup-close-button {
+  display: none !important;
+}
+
+.tooltipMap .leaflet-popup-content-wrapper {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* .tooltipMap .leaflet-popup-tip-container {
+  display: none;
+}  */
+
+.tooltipMap .leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+  color: #222; /* or any other color */
+}
+
+.title{
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+
+
+.mapView{
+  #map{
+    border: 1px solid black;
+  }
+}
+
+.tooltipMap .leaflet-popup-content-wrapper {
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.tooltipMap .leaflet-popup-content {
+  padding: 0.875rem 1rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.tooltipMap .leaflet-popup-tip {
+  background: #0f172a;
+}
