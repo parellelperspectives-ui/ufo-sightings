@@ -18,8 +18,8 @@ export default function MapView({
   const layerRef = useRef(null);
   const tileLayerRef = useRef(null);
 
-  const lightTiles =
-  'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+// replace the tile URL
+const lightTiles = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png';
 
   function escapeHTML(str = '') {
     return String(str)
@@ -40,22 +40,21 @@ export default function MapView({
 
   useEffect(() => {
     if (!mapRef.current) {
-      mapRef.current = L.map('map', {
-        minZoom: 2,
+     mapRef.current = L.map('map', {
+        minZoom: 2.5,
         maxZoom: 10,
         worldCopyJump: false,
         maxBounds: [[-85, -180], [85, 180]],
         maxBoundsViscosity: 1.0,
-      }).setView([20, 0], 2);
+      }).setView([20, 0], 2.5);
 
       const tileUrl = lightTiles;
 
       tileLayerRef.current = L.tileLayer(lightTiles, {
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-        subdomains: 'abcd',
-        maxZoom: 20,
+        attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 30,
         noWrap: true,
-        detectRetina: true, // 👈 THIS is the upgrade
+        detectRetina: true,
       });
 
       tileLayerRef.current.addTo(mapRef.current);
@@ -212,7 +211,7 @@ export default function MapView({
 
   return (
     <div className="overflow-hidden border border-slate-200 dark:border-slate-800">
-      <div id="map" style={{ height: '400px' }} />
+      <div id="map" style={{ height: '400px', width: '100%'}} />
     </div>
   );
 }

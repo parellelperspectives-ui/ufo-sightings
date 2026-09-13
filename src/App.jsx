@@ -75,25 +75,32 @@ const parseCountry = (location = '') => {
 
 useEffect(() => {
   fetch('data/nuforc_clean.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status} — ${res.url}`);
+      return res.json();
+    })
     .then(raw => {
-        const parsed = raw
-      .map(d => ({
-        ...d,
-        year: d.date ? Number(d.date.split('-')[0]) : NaN,
-        lat: d.lat ?? NaN,
-        lon: d.lon ?? NaN,
-        country: parseCountry(d.location),
-      }))
-      .filter(d => !isNaN(d.year));
+      const parsed = raw
+        .map(d => ({
+          ...d,
+          year: d.date ? Number(d.date.split('-')[0]) : NaN,
+          lat: d.lat ?? NaN,
+          lon: d.lon ?? NaN,
+          country: parseCountry(d.location),
+        }))
+        .filter(d => !isNaN(d.year));
 
       const parsedForMap = parsed.filter(
         d => !isNaN(d.lat) && !isNaN(d.lon)
       );
 
-
       setData(parsed);
       setMapData(parsedForMap);
+      setLoading(false);
+    })
+    .catch(err => {
+      console.error('Failed to load data:', err);
+      setLoading(false); // 👈 stop the spinner so you see the blank app
     });
 }, []);
 

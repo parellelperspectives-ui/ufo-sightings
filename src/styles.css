@@ -109,11 +109,14 @@ a:hover{
   padding-bottom: 10px;
 }
 
-
+.marker-cluster span {
+  color: #000000;
+}
 
 .mapView{
   #map{
     border: 1px solid black;
+    background-color: #d4dde8;
   }
 }
 
